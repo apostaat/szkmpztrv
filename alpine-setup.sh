@@ -24,7 +24,7 @@ git clone https://github.com/apostaat/szkmpztrv.git .
 
 # Install dependencies and build
 echo "📦 Installing dependencies..."
-npm ci
+npm install
 echo "🏗️ Building application..."
 npm run build
 
@@ -54,6 +54,6 @@ echo ""
 echo "To update the app later, just run:"
 echo "  cd /var/www/szkmpztrv"
 echo "  git pull origin main"
-echo "  npm ci"
+echo "  npm install"
 echo "  npm run build"
 echo "  rc-service nginx restart"
