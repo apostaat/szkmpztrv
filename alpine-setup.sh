@@ -18,6 +18,10 @@ echo "📁 Creating application directory..."
 mkdir -p /var/www/szkmpztrv
 cd /var/www/szkmpztrv
 
+# Remove existing content if any
+echo "🧹 Cleaning existing content..."
+rm -rf /var/www/szkmpztrv/*
+
 # Clone repository
 echo "🔗 Cloning repository..."
 git clone https://github.com/apostaat/szkmpztrv.git .
