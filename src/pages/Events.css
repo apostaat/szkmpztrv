@@ -1,0 +1,23 @@
+.events {
+  padding: 2rem 0;
+  min-height: calc(100vh - 80px);
+}
+
+.events-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.events-placeholder {
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.events-placeholder p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0;
+}
