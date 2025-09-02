@@ -18,6 +18,7 @@
     "build": "NODE_OPTIONS='--max-old-space-size=4096' react-scripts build",
     "build:low-memory": "NODE_OPTIONS='--max-old-space-size=2048' react-scripts build",
     "build:minimal": "NODE_OPTIONS='--max-old-space-size=1024' react-scripts build",
+    "build:ultra-minimal": "NODE_OPTIONS='--max-old-space-size=512' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

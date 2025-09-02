@@ -3,7 +3,7 @@
 # Alpine Linux setup script for szkmpztrv
 # Run this on your Alpine VM after SSH: ssh root@64.176.214.253
 
-echo "🚀 Setting up szkmpztrv on Alpine Linux..."
+echo "🚀 Setting up szkmpztrv on Alpine Linux (500MB RAM optimized)..."
 
 # Update system
 echo "📦 Updating system..."
@@ -12,6 +12,11 @@ apk update && apk upgrade
 # Install Node.js, Nginx, Git
 echo "📦 Installing Node.js, Nginx, Git..."
 apk add nodejs npm nginx git
+
+# Memory optimization for 500MB RAM
+echo "🧠 Optimizing memory for 500MB RAM..."
+echo "vm.swappiness=10" >> /etc/sysctl.conf
+echo "vm.vfs_cache_pressure=50" >> /etc/sysctl.conf
 
 # Remove existing app directory completely
 echo "🧹 Removing existing application directory..."
@@ -29,8 +34,8 @@ git clone https://github.com/apostaat/szkmpztrv.git .
 # Install dependencies and build
 echo "📦 Installing dependencies..."
 npm install
-echo "🏗️ Building application (low-memory mode)..."
-npm run build:low-memory
+echo "🏗️ Building application (ultra-minimal mode for 500MB RAM)..."
+npm run build:ultra-minimal
 
 # Configure Nginx
 echo "⚙️ Configuring Nginx..."
@@ -59,5 +64,5 @@ echo "To update the app later, just run:"
 echo "  cd /var/www/szkmpztrv"
 echo "  git pull origin main"
 echo "  npm install"
-echo "  npm run build:low-memory"
+echo "  npm run build:ultra-minimal"
 echo "  rc-service nginx restart"

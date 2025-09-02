@@ -13,8 +13,8 @@ git pull origin main
 echo "📦 Installing dependencies..."
 npm install
 
-echo "🏗️ Building application (low-memory mode)..."
-npm run build:low-memory
+echo "🏗️ Building application (ultra-minimal mode for 500MB RAM)..."
+npm run build:ultra-minimal
 
 echo "🔄 Restarting Nginx..."
 rc-service nginx restart
