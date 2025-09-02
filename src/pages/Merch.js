@@ -15,7 +15,11 @@ const Merch = () => {
     }
 
     const message = `I want to purchase ${quantity} of kofta ${selectedSize}`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    // Use environment variable for WhatsApp number, fallback to default
+    const whatsappNumber = process.env.REACT_APP_WHATSAPP_NUMBER || '';
+    const whatsappUrl = whatsappNumber 
+      ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+      : `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
