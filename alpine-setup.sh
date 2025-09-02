@@ -29,8 +29,8 @@ git clone https://github.com/apostaat/szkmpztrv.git .
 # Install dependencies and build
 echo "📦 Installing dependencies..."
 npm install
-echo "🏗️ Building application..."
-npm run build
+echo "🏗️ Building application (low-memory mode)..."
+npm run build:low-memory
 
 # Configure Nginx
 echo "⚙️ Configuring Nginx..."
@@ -59,5 +59,5 @@ echo "To update the app later, just run:"
 echo "  cd /var/www/szkmpztrv"
 echo "  git pull origin main"
 echo "  npm install"
-echo "  npm run build"
+echo "  npm run build:low-memory"
 echo "  rc-service nginx restart"
