@@ -15,10 +15,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "NODE_OPTIONS='--max-old-space-size=4096' react-scripts build",
+    "build": "react-scripts build",
     "build:low-memory": "NODE_OPTIONS='--max-old-space-size=2048' react-scripts build",
     "build:minimal": "NODE_OPTIONS='--max-old-space-size=1024' react-scripts build",
     "build:ultra-minimal": "NODE_OPTIONS='--max-old-space-size=512' react-scripts build",
+    "build:extreme-minimal": "NODE_OPTIONS='--max-old-space-size=256' react-scripts build",
+    "build:production": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
