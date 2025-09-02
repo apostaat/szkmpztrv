@@ -42,7 +42,7 @@ const Home = () => {
       p.draw = () => {
         p.background(0);
         drawWaves();
-        drawCenterSquare();
+       
         t += p.deltaTime;
       };
 
@@ -68,27 +68,6 @@ const Home = () => {
             p.vertex(x, y);
           }
           p.endShape();
-        }
-      }
-
-      function drawCenterSquare() {
-        const s = p.min(p.width, p.height) * 0.36;
-        const x = p.width / 2 - s / 2;
-        const y = p.height / 2 - s / 2;
-
-        p.noStroke();
-        p.fill(255);
-        p.rect(x, y, s, s, 8);
-
-        const lines = ['союз', 'композиторов', 'и эвм'];
-        p.fill(0);
-        p.textAlign(p.CENTER, p.CENTER);
-        const maxTextSize = s * 0.12;
-        p.textSize(maxTextSize);
-        const lineH = maxTextSize * 1.2;
-        const startY = p.height / 2 - lineH;
-        for (let i = 0; i < lines.length; i++) {
-          p.text(lines[i], p.width / 2, startY + i * lineH);
         }
       }
 

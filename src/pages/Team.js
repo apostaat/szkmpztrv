@@ -27,7 +27,7 @@ const Team = () => {
     },
     {
       id: 'coff',
-      name: 'dmitry baykof',
+      name: 'dmitry baykov',
       alias: 'c0ff',
       role: 'music producer',
       background: 'c++ programming, modular synthesis',
@@ -40,22 +40,32 @@ const Team = () => {
       id: 'vdovina',
       name: 'vdovina ekaterina',
       role: 'animation director',
-      background: 'math',
-      inspiration: '',
-      instrument: '',
-      style: '',
+      background: 'math, 3d, animation',
+      inspiration: 'generative art',
+      instrument: 'resolum',
+      style: 'hand-drawn animation',
       hasImage: true
     },
     {
       id: 'w96k',
-      name: 'w96k',
-      role: '',
-      background: '',
-      inspiration: '',
-      instrument: '',
-      style: '',
-      hasImage: false
-    }
+      name: 'mikhail kirillov',
+      alias: 'w96k',
+      role: 'music producer',
+      background: 'functional programming, orchestral music',
+      inspiration: 'orchestral music',
+      instrument: 'pc',
+      style: 'dungeon synth, idm, experimental',
+      hasImage: true
+    },
+    {id: 'ilya',
+      name: 'ilya yudovich',
+      role: 'animation director',
+      hasImage: false},
+      {id: 'nino',
+      name: 'nino chechelashvili',
+        role: 'visual artist',
+        hasImage: false
+      }  
   ];
 
   return (
@@ -68,17 +78,19 @@ const Team = () => {
             <div key={member.id} className="team-member">
               <div className="member-photo">
                 {member.hasImage ? (
-                  <img 
-                    src={`/team/${member.id}.jpg`} 
-                    alt={member.name}
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="photo-placeholder" style={{ display: 'none' }}>
-                    <span className="trafaret-font">союз композиторов и эвм</span>
-                  </div>
+                  <>
+                    <img 
+                      src={`/team/${member.id}.jpg`} 
+                      alt={member.name}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="photo-placeholder" style={{ display: 'none' }}>
+                      <span className="trafaret-font">союз композиторов и эвм</span>
+                    </div>
+                  </>
                 ) : (
                   <div className="photo-placeholder">
                     <span className="trafaret-font">союз композиторов и эвм</span>

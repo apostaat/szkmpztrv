@@ -61,27 +61,6 @@ function drawWaves() {
   }
 }
 
-function drawCenterSquare() {
-  const s = min(width, height) * 0.36;
-  const x = width / 2 - s / 2;
-  const y = height / 2 - s / 2;
-
-  noStroke();
-  fill(255);
-  rect(x, y, s, s, 8);
-
-  const lines = ['союз', 'композиторов', 'и эвм'];
-  fill(0);
-  textAlign(CENTER, CENTER);
-  const maxTextSize = s * 0.12;
-  textSize(maxTextSize);
-  const lineH = maxTextSize * 1.2;
-  const startY = height / 2 - lineH;
-  for (let i = 0; i < lines.length; i++) {
-    text(lines[i], width / 2, startY + i * lineH);
-  }
-}
-
 function keyPressed() {
   if (key === 'r' || key === 'R') {
     initWaves();
