@@ -13,14 +13,14 @@ apk update && apk upgrade
 echo "📦 Installing Node.js, Nginx, Git..."
 apk add nodejs npm nginx git
 
-# Create app directory
-echo "📁 Creating application directory..."
+# Remove existing app directory completely
+echo "🧹 Removing existing application directory..."
+rm -rf /var/www/szkmpztrv
+
+# Create fresh app directory
+echo "📁 Creating fresh application directory..."
 mkdir -p /var/www/szkmpztrv
 cd /var/www/szkmpztrv
-
-# Remove existing content if any
-echo "🧹 Cleaning existing content..."
-rm -rf /var/www/szkmpztrv/*
 
 # Clone repository
 echo "🔗 Cloning repository..."
