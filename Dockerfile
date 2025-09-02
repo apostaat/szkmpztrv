@@ -16,8 +16,8 @@ RUN npm install
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Build the application with ultra-minimal memory usage
+RUN npm run build:ultra-minimal
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/http.d/szkmpztrv.conf

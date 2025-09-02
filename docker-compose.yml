@@ -8,3 +8,9 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/http.d/szkmpztrv.conf
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+        reservations:
+          memory: 300M
