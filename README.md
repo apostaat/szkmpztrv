@@ -74,15 +74,34 @@ src/
 
 ## Deployment
 
+The project includes a comprehensive Makefile for easy deployment to Vultr servers.
+
+### Makefile Commands
+
+```bash
+make help                    # Show all available commands
+make setup SERVER=user@ip   # Initial server setup
+make deploy SERVER=user@ip  # Deploy updates
+make quick-deploy SERVER=user@ip  # Quick deploy without building
+make status SERVER=user@ip  # Check server status
+make build                   # Build locally
+make clean                   # Clean build files
+```
+
 ### Vultr Setup
 
 1. Create a new Vultr instance (Ubuntu 22.04 recommended)
-2. SSH into your server
-3. Run the deployment script:
+2. From your local machine, run the initial setup:
 ```bash
-chmod +x deploy.sh
-./deploy.sh
+make setup SERVER=root@YOUR_SERVER_IP
 ```
+
+This will automatically:
+- Install Node.js, Nginx, and Git
+- Clone your repository
+- Build the application
+- Configure Nginx
+- Set up the firewall
 
 ### GitHub Actions CI/CD
 
@@ -97,8 +116,17 @@ chmod +x deploy.sh
 ### Manual Deployment
 
 ```bash
-npm run build
-# Copy build/ folder to your server's web directory
+# Build locally
+make build
+
+# Deploy to server
+make deploy SERVER=root@YOUR_SERVER_IP
+
+# Quick deploy (without building)
+make quick-deploy SERVER=root@YOUR_SERVER_IP
+
+# Check server status
+make status SERVER=root@YOUR_SERVER_IP
 ```
 
 ## Customization

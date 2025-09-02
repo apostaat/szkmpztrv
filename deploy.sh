@@ -1,57 +1,36 @@
 #!/bin/bash
 
 # Vultr deployment script for szkmpztrv React SPA
-# Run this script on your Vultr server after creating a new instance
+# This script is now replaced by the Makefile for easier deployment
+# Use: make setup SERVER=username@SERVER-IP
 
-echo "Setting up szkmpztrv React SPA on Vultr..."
-
-# Update system
-sudo apt update && sudo apt upgrade -y
-
-# Install Node.js 18.x
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Install Nginx
-sudo apt install nginx -y
-
-# Install Git
-sudo apt install git -y
-
-# Create application directory
-sudo mkdir -p /var/www/szkmpztrv
-sudo chown $USER:$USER /var/www/szkmpv
-
-# Clone repository (replace with your actual repository URL)
-cd /var/www/szkmpztrv
-git clone https://github.com/yourusername/szkmpztrv.git .
-
-# Install dependencies
-npm ci
-
-# Build application
-npm run build
-
-# Configure Nginx
-sudo cp nginx.conf /etc/nginx/sites-available/szkmpztrv
-sudo ln -s /etc/nginx/sites-available/szkmpztrv /etc/nginx/sites-enabled/
-sudo rm /etc/nginx/sites-enabled/default
-
-# Test Nginx configuration
-sudo nginx -t
-
-# Restart Nginx
-sudo systemctl restart nginx
-sudo systemctl enable nginx
-
-# Set up firewall
-sudo ufw allow 'Nginx Full'
-sudo ufw allow OpenSSH
-sudo ufw --force enable
-
-echo "Deployment completed!"
-echo "Your React SPA should now be accessible at your server's IP address"
-echo "Don't forget to:"
+echo "🚀 szkmpztrv deployment script"
+echo ""
+echo "This script has been replaced by the Makefile for easier deployment."
+echo ""
+echo "To deploy your application:"
+echo ""
+echo "1. Initial server setup:"
+echo "   make setup SERVER=root@YOUR_SERVER_IP"
+echo ""
+echo "2. Deploy updates:"
+echo "   make deploy SERVER=root@YOUR_SERVER_IP"
+echo ""
+echo "3. Quick deploy (without building):"
+echo "   make quick-deploy SERVER=root@YOUR_SERVER_IP"
+echo ""
+echo "4. Check server status:"
+echo "   make status SERVER=root@YOUR_SERVER_IP"
+echo ""
+echo "5. View help:"
+echo "   make help"
+echo ""
+echo "Example:"
+echo "   make setup SERVER=root@192.168.1.100"
+echo ""
+echo "The Makefile will handle all the deployment steps automatically!"
+echo ""
+echo "Make sure to:"
 echo "1. Update the domain in nginx.conf"
 echo "2. Set up SSL with Let's Encrypt"
 echo "3. Configure GitHub Actions secrets for CI/CD"
